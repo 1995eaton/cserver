@@ -16,7 +16,7 @@ const char header[] = "HTTP/1.1 200 OK\nContent-Type: text/html\r\n\r\n";
 
 char *get_ip(struct sockaddr_in* si) {
   unsigned char *ipa = (unsigned char*)&si->sin_addr.s_addr;
-  char *ip = malloc(16 * sizeof(char));
+  char *ip = (char*) malloc(16 * sizeof(char));
   sprintf(ip, "%d.%d.%d.%d", ipa[0], ipa[1], ipa[2], ipa[3]);
   return ip;
 }
